@@ -1,0 +1,182 @@
+<app-nav></app-nav>
+<div class="mis-negocios">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="align-self-center">
+                    <p class="fuente-sfui">Mis negocios</p>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                <div class="d-flex justify-content-end">
+                    <button mdbBtn type="button" color="primary" mdbWavesEffect
+                    routerLinkActive="active" routerLink="/registrar-negocio">
+                        <mdb-icon fas icon="plus-circle" class="mr-1"></mdb-icon>Crear nuevo
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="md-form">
+                    <mdb-icon fas icon="search" class="prefix"></mdb-icon>
+                    <input mdbInput type="text" id="form1" class="form-control" (keyup)="buscarNegocio($event)"
+                    [ngModel]="nombre" name="nombre" placeholder="Buscar">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div *ngIf="sinNegocios">
+                    <div class="no-data">
+                        <p class="fuente-sfui">No tienes negocios registrados</p>
+                        <hr>
+                        <img src="../../../assets/negocio.jpg" height="200px" alt="">
+                        <p class="fuente-sfui">Aun no has registrado ningún negocio,</p>
+                        <p class="fuente-sfui">para registrarlo presiona el botón "Crear Nuevo"</p>
+                    </div>
+                </div>
+
+                <div *ngIf="sinResultadosBusquedaNegocio">
+                    <div class="no-data">
+                        <p class="fuente-sfui">No se encontraron resultados</p>
+                        <hr>
+                        <img src="../../../assets/negocio.jpg" height="200px" alt="">
+                        <p class="fuente-sfui">Intente nuevamente o para registrar un</p>
+                        <p class="fuente-sfui">nuevo negocio presione el botón "Crear nuevo"</p>
+                    </div>
+                </div>
+
+                <div *ngIf="tablaNegocios">
+                    <table mdbTable responsive="true" hover="true">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Giro de negocio</th>
+                            <th>Categoria</th>
+                            <th>Dirección</th>
+                            <th>Gerarquia</th>
+                            <th>N° de Productos Registrados</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let negocio of negociosUsuario; let indice = index">
+                                <td> {{ indice + 1 }} </td>
+                                <td><img src="{{ negocio.foto }}" height="102px" alt=""></td>
+                                <td> {{ negocio.nombre }} </td>
+                                <td> {{ negocio.giro }} </td>
+                                <td> {{ negocio.categoria }} </td>
+                                <td> {{ negocio.direccion }} </td>
+                                <td>
+                                    <div *ngIf="negocio.jerarquia == 'Principal'">
+                                        <button type="button" mdbBtn color="primary" mdbWavesEffect>Principal</button>
+                                    </div>
+
+                                    <div *ngIf="negocio.jerarquia == 'Sucursal'">
+                                        <button type="button" mdbBtn color="warning" mdbWavesEffect>Sucursal</button>
+                                    </div>
+                                </td>
+                                <td> Pendiente </td>
+                                <td>
+                                    <div class="f">
+                                        <mdb-icon far icon="eye"
+                                        [routerLink]="['/informacion-mi-negocio', negocio.$key]"></mdb-icon>
+                                        <mdb-icon fas icon="trash" (click)="deleteNegocio(negocio.$key)"></mdb-icon>
+                                        <div *ngIf="negocio.jerarquia == 'Sucursal'">
+                                            <div class="btn-group" mdbDropdown>
+                                                <mdb-icon fas icon="ellipsis-v" classInside="dropdown-toggle"
+                                                mdbDropdownToggle class="waves-effect"mdbWavesEffect>
+                                                </mdb-icon>
+                                                <div class="dropdown-menu dropdown-primary dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                        (click)="convertirNegocio(negocio.$key)">
+                                                        Convertir en Principal
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--<tr>
+                                <td>1</td>
+                                <td><img src="../../../assets/chronos1.jpg" height="102px" alt=""></td>
+                                <td>Chronos PC Sucursal 1</td>
+                                <td>Tienda de Computadoras</td>
+                                <td>Computadoras y Accesorios</td>
+                                <td>Adolfo Ruíz Cortínez 527, Tajin, 93330 Poza Rica de Hidalgo, Ver.</td>
+                                <td>
+                                    <button type="button" mdbBtn color="primary" mdbWavesEffect>Principal</button>
+                                </td>
+                                <td>20</td>
+                                <td>
+                                    <div>
+                                        <mdb-icon far icon="eye"></mdb-icon>
+                                        <mdb-icon fas icon="trash" (click)="basicModal.show()"></mdb-icon>
+                                        <div class="btn-group" mdbDropdown>
+                                            <mdb-icon fas icon="ellipsis-v" classInside="dropdown-toggle"
+                                            mdbDropdownToggle class="waves-effect"mdbWavesEffect>
+                                            </mdb-icon>
+                                            <div class="dropdown-menu dropdown-primary dropdown-menu-right">
+                                              <a class="dropdown-item" href="#">Convertir en principal</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>2</td>
+                                <td><img src="../../../assets/chronos2.jpg" height="102px" alt=""></td>
+                                <td>Chronos PC Sucursal 2</td>
+                                <td>Tienda de Computadoras</td>
+                                <td>Computadoras y Accesorios</td>
+                                <td>Adolfo Ruíz Cortínez 527, Tajin, 93330 Poza Rica de Hidalgo, Ver.</td>
+                                <td>
+                                    <button type="button" mdbBtn color="warning" mdbWavesEffect>Secundario</button>
+                                </td>
+                                <td>6</td>
+                                <td>
+                                    <div>
+                                        <mdb-icon far icon="eye"></mdb-icon>
+                                        <mdb-icon fas icon="trash"></mdb-icon>
+                                        <div class="btn-group" mdbDropdown>
+                                            <mdb-icon fas icon="ellipsis-v" classInside="dropdown-toggle"
+                                            mdbDropdownToggle class="waves-effect"mdbWavesEffect>
+                                            </mdb-icon>
+                                            <div class="dropdown-menu dropdown-primary dropdown-menu-right">
+                                              <a class="dropdown-item" href="#">Convertir en principal</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <div>
+<div>
+
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="fuente-sfui">Eliminar</h4>
+                <p class="fuente-sfui">Al eliminar el negocio toda su información y los productos asociados serán borrados, ¿Está seguro de eliminar este negocio?</p>
+                <div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" mdbBtn color="primary" mdbWavesEffect>No</button>
+                        <button type="button" mdbBtn color="primary" mdbWavesEffect>Sí</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

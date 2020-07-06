@@ -1,0 +1,1914 @@
+/* You can add global styles to this file, and also import other style files */
+
+/////////////////////////////////////////
+//////////////   General   //////////////
+/////////////////////////////////////////
+
+@font-face {
+    font-family: "Dosis";
+    src: url("assets/Dosis/Dosis-SemiBold.ttf");
+}
+
+.fuente-dosis {
+    font-family: "Dosis";
+}
+
+@font-face {
+    font-family: "SFUI Display";
+    src: url("assets/SF-UI/SF-UI-Display-Regular.otf");
+}
+
+.fuente-sfui {
+    font-family: "SFUI Display";
+}
+
+.fuente-sfui-bold {
+    font-family: "SFUI Display";
+    font-weight: bold;
+}
+
+.swal-modal {
+    padding: 0px 18px !important;
+}
+
+.swal-modal .swal-icon--success__line {
+    background-color: #ffffff;
+    z-index: 3;
+}
+
+.swal-modal .swal-icon--success__ring {
+    background: #f52d56;
+    border: 4px solid #f52d56;
+}
+
+.swal-modal .swal-title {
+    font-size: 18px;
+}
+
+.swal-modal .swal-text {
+    font-weight: bold !important;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.swal-modal .swal-footer {
+    text-align: center;
+}
+
+.swal-button__loader,
+.swal-button {
+    font-size: 14pt !important;
+}
+
+.swal-modal .swal-button:focus {
+    box-shadow: none !important;
+}
+
+.swal-modal .swal-button.swal-button--confirm {
+    background-color: #ffffff;
+    color: #f52d56;
+    font-size: 16px;
+    border: 0px !important;
+}
+
+.swal-modal .swal-button.swal-button--confirm:not([disabled]):hover {
+    background-color: #f52d56;
+    color: #fff;
+    font-size: 16px;
+    border: 0px !important;
+}
+
+.swal-icon--warning {
+    border-color: #f52d56 !important;
+    animation: none !important;
+}
+
+.swal-button--cancel {
+    color: #f52d56;
+    background-color: #ffffff;
+}
+
+.swal-button--cancel:not([disabled]):hover {
+    color: white;
+    background-color: #f52d56;
+}
+
+.swal-modal .swal-icon--warning__body,
+.swal-modal .swal-icon--warning__dot {
+    background-color: #f52d56 !important;
+}
+
+.swal-modal .swal-icon {
+    border-color: #f52d56;
+}
+
+/*
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display: none;
+}
+
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea.container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+    
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea.container::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+    
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea.container::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}*/
+/*div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .scrollbar {
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 65px;
+    background: #fff;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+    }
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .force-overflow {
+    min-height: 450px;
+}
+    
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .scrollbar-primary::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+    
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #4285F4;
+}*/
+
+.custom-dropzone {
+    display: flex;
+    align-items: center;
+    height: 180px;
+    background: #e4e6e7 !important;
+    cursor: pointer;
+    color: #717386;
+    border: 0px !important;
+    border-radius: 5px;
+    font-size: 16px;
+    overflow-x: auto;
+}
+
+.custom-dropzone.agregar-editar-producto {
+    width: 436px !important;
+    height: 140px !important;
+    padding: 0px !important;
+}
+
+ngx-dropzone-image-preview {
+    outline: 0px !important;
+}
+
+.custom-dropzone.agregar-editar-producto ngx-dropzone-image-preview {
+    height: 100px !important;
+    min-height: 100px !important;
+    margin: 0px !important;
+    padding: 0px 15px !important;
+    outline: 0px !important;
+}
+
+ngx-dropzone-label div h2 {
+    color: #717386 !important;
+    font-size: 16pt;
+    margin: 0px;
+    padding: 30px;
+}
+
+ngx-dropzone-label,
+[_nghost-mcf-c2] {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+.custom-dropzone {
+    overflow-y: hidden !important;
+}
+
+.custom-dropzone::-webkit-scrollbar {
+    height: 6px;
+}
+
+.custom-dropzone::-webkit-scrollbar-thumb {
+    background-color: #f52d56;
+    border-radius: 20px;
+}
+
+mdb-icon {
+    outline: 0;
+}
+
+p.no_fotos_negocio {
+    margin-top: 15px;
+    color: #F52D56;
+    font-weight: bold;
+}
+
+div.slide.slick-slide.slick-current.slick-active,
+div.slide.slick-slide.slick-active {
+    outline: 0px;
+}
+
+mdb-carousel mdb-carousel-item div img.imagenes-producto{
+    width: 200px !important;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ffffff00 !important;
+}
+
+
+/////////////////////////////////////////
+//////////////   Navbar   ///////////////
+/////////////////////////////////////////
+
+nav.navbar {
+    position: fixed;
+    width: 100% !important;
+    background-color: #F52D56 !important;
+    z-index: 999;
+    padding: 8px 30px;
+}
+
+.dropdown.show .dropdown-menu {
+    transition: none !important;
+}
+
+.dropdown-menu {
+    will-change: transform !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown {
+    background-color: white !important;
+    border-color: #D9D9D9 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown.dropdown-menu {
+    padding: 0px !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 {
+    display: flex;
+    padding: 17px;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1:hover {
+    background-color: #f3f3f3 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div {
+    padding-left: 13px;
+    width: 188px;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div p {
+    color: #262628 !important;
+    margin: 0px !important;
+    font-size: 11pt;
+    font-weight: normal;
+    cursor: default;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div p:first-child {
+    font-weight: 700;
+    font-size: 11pt;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div button.btn {
+    background-color: #f52d56 !important;
+    margin: 10px 0px 0px 0px !important ;
+    width: 80px;
+    height: 22px;
+    border-radius: 10px;
+    padding: 2px 8px !important;
+    text-transform: none;
+    transition: 0s;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 {
+    border-top: 1px #d9d9d9 solid;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div {
+    display: flex !important;
+    align-items: baseline;
+    padding: 12px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div:hover {
+    background-color: #f3f3f3 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div i {
+    color: #9B9B9B !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div p {
+    font-weight: normal;
+    margin-bottom: 0px !important;
+    margin-left: 20px !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3 {
+    display: flex !important;
+    align-items: baseline;
+    border-top: 1px #d9d9d9 solid;
+    padding: 12px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3:hover {
+    background-color: #f3f3f3 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3 i {
+    color: #9B9B9B !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3 p {
+    margin-left: 20px !important;
+    font-weight: normal;
+    margin-bottom: 0px !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4 {
+    display: flex !important;
+    align-items: baseline;
+    border-top: 1px #d9d9d9 solid;
+    padding: 12px;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4:hover {
+    background-color: #f3f3f3 !important;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4 i {
+    color: #9B9B9B !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4 p {
+    margin-left: 20px !important;
+    font-weight: normal;
+    margin-bottom: 0px !important;
+}
+
+
+/////////////////////////////////////////
+///////////////   Login   ///////////////
+/////////////////////////////////////////
+
+div.login {
+    background-color: #F52D56 !important;
+    height: 100vh;
+}
+
+div.login div.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+div.login div.mask.flex-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 99%;
+}
+
+div.login div.mask div.container div.logo {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+div.login div.mask div.container div.logo p {
+    font-size: 30pt;
+    color: white;
+    margin-left: 20px;
+}
+
+div.login div.mask.flex-center div.container div form {
+    background-color: white !important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    width: 480px;
+    border-radius: 3%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 3.2% 4% 6% 4%;
+}
+
+div.login div.mask.flex-center div.container div form p.inicio-sesion {
+    color: #262628;
+    font-size: 24pt;
+    text-align: initial;
+    margin-bottom: 8px;
+}
+
+div.login div.mask.flex-center div.container div form p.inicio-info.fuente-sfui {
+    color: #262628;
+    font-size: 18pt;
+    text-align: initial;
+    line-height: 28px;
+    margin-bottom: 40px;
+}
+
+div.login div.mask.flex-center div.container div form div.md-form {
+    background: #F7F7F7;
+    padding: 3px 11px;
+}
+
+div.login div.mask.flex-center div.container div form input.form-control {
+    background: #F7F7F7;
+}
+
+div.login div.mask.flex-center div.container div form .md-form input[type=text]:focus:not([readonly]) {
+    box-shadow: 0 1px 0 0 #f7f7f7;
+    border-bottom: 1px solid #ced4da;
+}
+
+div.login div.mask.flex-center div.container div form .md-form input[type=text]:focus:not([readonly]),
+div.login div.mask.flex-center div.container div form .md-form input[type=password]:focus:not([readonly]) {
+    box-shadow: 0 1px 0 0 #f52d56;
+    border-bottom: 1px solid #f52d56;
+}
+
+div.login div.mask.flex-center div.container div form div {
+    margin-bottom: 26px;
+}
+
+div.login div.mask.flex-center div.container div form div.ingresar {
+    margin-bottom: 60px;
+}
+
+div.login div.mask.flex-center div.container div form div button.btn-personalizado {
+    background-color: #F52D56 !important;
+    color: white !important;
+    width: 134px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: none;
+}
+
+div.login div.mask.flex-center div.container div form div a.recovery-password {
+    margin-left: 10px;
+    color: #262628;
+    font-size: 12pt;
+}
+
+div.login div.mask.flex-center div.container div form a {
+    color: #262628;
+    font-size: 12pt;
+    margin-bottom: 30px !important;
+}
+
+div.login div.mask.flex-center div.container div form div.container-social-buttons {
+    margin-top: 8px !important;
+    margin-bottom: 30px;
+}
+
+div.login div.mask.flex-center div.container div form div button:first-child {
+    margin-left: 0px !important;
+}
+
+div.login div.mask.flex-center div.container div form div button {
+    background-color: #F7F7F7 !important;
+    color: #262628 !important;
+    font-weight: bold;
+    padding: 0px !important;
+    width: 116px;
+    height: 43px;
+    font-size: 10pt;
+    text-transform: none !important;
+}
+
+div.login div.mask.flex-center div.container div form div i.fa-facebook-f {
+    background: #3B5998 !important;
+    color: white;
+    padding: 4px 7px;
+    border-radius: 50%;
+}
+
+div.login div.mask.flex-center div.container div form div i.fa-google-plus {
+    color: #F44336;
+    border-radius: 50%;
+    font-size: 16pt;
+}
+
+div.login div.mask.flex-center div.container div form div i.fa-twitter {
+    background: #55ACEE !important;
+    color: white;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+div.login div.mask.flex-center div.container div form a:last-child {
+    font-size: 14pt;
+    color: #262628 !important;
+    margin-top: 10px;
+}
+
+div.login div.mask.flex-center div.container div form p.error-no-login,
+div.login div.mask.flex-center div.container div form p.error-no-registro {
+    color: #f52d56;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+////////////////////////////////////////////
+//////////////  MIS NEGOCIOS  //////////////
+////////////////////////////////////////////
+
+.sin-negocios {
+    display: none !important;
+}
+
+.tabla-negocios {
+    display: block !important;
+}
+
+nav.navbar a.navbar-brand div {
+    display: flex !important;
+    align-items: center;
+}
+
+nav.navbar a.navbar-brand div p {
+    margin: 0px 0px 0px 10px !important;
+    font-family: "Dosis";
+    font-size: 18pt !important;
+}
+
+div.mis-negocios {
+    background-color: white !important;
+    height: 100vh;
+    padding: 92px 30px 20px 30px;
+}
+
+div.mis-negocios div.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+div.mis-negocios div.mask.flex-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 95%;
+}
+
+div.mis-negocios div.container-fluid {
+    padding: 0px !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-3 p {
+    color: #262628 !important;
+    font-size: 22pt;
+    font-weight: 600 !important;
+    margin: 0px !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-3 button {
+    background-color: #F52D56 !important;
+    width: 169px !important;
+    height: 50px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    text-transform: none;
+    border-radius: 8px;
+    font-size: 14pt;
+    font-weight: 500 !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-3 button i {
+    font-size: 12pt !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.no-data {
+    text-align: center;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.no-data p:first-child {
+    margin-top: 10px !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.no-data img {
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.no-data p {
+    margin: 0px !important;
+    font-size: 12pt;
+    color: #808080;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.md-form {
+    margin: 0px !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.md-form .form-control {
+    padding-left: 40px !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.md-form input[type=text]:focus:not([readonly]) {
+    box-shadow: 0 1px 0 0 #f52d56;
+    border-bottom: 1px solid #f52d56;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.md-form .prefix ~ input {
+    margin-left: 0px !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.md-form .prefix {
+    font-size: 11pt;
+    top: 0.5rem !important;
+    margin-left: 0.3rem !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 div.md-form .prefix.active {
+    color: #f52d56 !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table-responsive,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 table.table-responsive {
+    display: inline-table !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table {
+    width: 100% !important;
+    margin-bottom: 0px !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table th {
+    font-size: 12pt !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    text-align: center;
+    font-family: "SFUI Display";
+    font-weight: 600;
+    color: #262628 !important;
+    font-size: 11pt;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table td {
+    vertical-align: middle !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td {
+    text-align: center;
+    font-family: "SFUI Display";
+    color: #262628 !important;
+    font-size: 11pt;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td button.btn-primary {
+    background-color: #398BF7 !important;
+    width: 120px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    padding: 0px !important;
+    text-transform: none;
+    font-size: 11pt;
+    pointer-events: none;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td button.btn-warning {
+    background-color: #FFB22B !important;
+    width: 120px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    padding: 0px !important;
+    text-transform: none;
+    font-size: 11pt;
+    pointer-events: none;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td .dropdown-toggle::after {
+    display: none !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td div div div.dropdown-menu.dropdown-primary.dropdown-menu-right.various-dropdown {
+    top: 15px;
+    position: absolute !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td div div div.dropdown-menu.dropdown-primary.dropdown-menu-right.various-dropdown.fadeInDropdown {
+    top: 15px;
+    position: absolute !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td div.f {
+    display: flex !important;
+    justify-content: center;
+}
+
+div.mis-negocios div.container-fluid div.row div.col-md-12 table.table tbody tr td div i {
+    font-size: 12pt;
+    margin: 10px !important;
+    pointer-events: all;
+    cursor: pointer;
+    color: #808080 !important;
+    outline: 0 !important;
+}
+
+div.modal div.modal-dialog {
+    margin-top: 18%;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body {
+    padding: 25px !important;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body p {
+    font-size: 12pt;
+    margin-bottom: 0px !important;
+    font-weight: 500;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body p.no_fotos_producto {
+    margin-top: 15px;
+    color: #F52D56;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body div button.btn {
+    background-color: white !important;
+    color: #F52D56;
+    margin: 5px;
+    padding: 5px 20px;
+    box-shadow: none !important;
+    font-family: "SFUI Display";
+    font-weight: 600;
+}
+
+
+////////////////////////////////////////////
+///////////  REGISTRAR NEGOCIO  ////////////
+////////////////////////////////////////////
+
+div.registrar-negocio {
+    background-color: white !important;
+    padding: 92px 30px 40px 30px;
+}
+
+div.registrar-negocio div.container-fluid {
+    padding: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i {
+    padding-right: 30px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i input.file-path {
+    width: 100% !important;
+    margin-bottom: 22px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.file-field.i .btn input[type=file] {
+    height: 100%;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.file-field.i input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.file-field p.text-primary,
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.file-field h5.text-primary {
+    margin: 10px 0px 0px 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d {
+    padding-left: 30px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel {
+    width: 89% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 22px;
+    background: #e4e6e7;
+    padding: 10px 20px 5px 20px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel .slick-prev {
+    left: -33px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.slide.slick-slide.slick-active,
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.slide.slick-slide.slick-current,
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.slide.slick-slide.slick-current.slick-active {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 120px !important;
+    background: #e4e6e7;
+    outline: 0;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel img {
+    height: 90px;
+    width: auto;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel img:hover div.iconos mdb-icon {
+    opacity: 1;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.iconos {
+    position: absolute;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.iconos mdb-icon {
+    opacity: 1;
+    color: white;
+    font-size: 14pt;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/*
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.back-grey div {
+    width: 120px !important;
+    height: 100px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.back-grey {
+    position: absolute;
+    background: rgba(228, 230, 231, 0.0);
+    width: 120px !important;
+    height: 100px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.back-grey div mdb-icon {
+    color: transparent;
+    font-size: 14pt;
+    margin: 10px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.back-grey:hover {
+    transition: .5s ease;
+    cursor: pointer;
+    background: rgba(228, 230, 231, 0.4);
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio ngx-slick-carousel div.back-grey div:hover mdb-icon {
+    transition: .5s ease;
+    color: white;
+}*/
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio button.btn-subir-fotos {
+    background-color: #f52d56 !important;
+    width: 110px !important;
+    height: 38px !important;
+    padding: 0px;
+    margin: 0px;
+    font-size: 12pt !important;
+    font-weight: bold;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-transform: none;
+    border-radius: 10px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio div.custom-dropzone {
+    margin-bottom: 25px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.editar-galeria-negocio button.btn-ver-borrar {
+    background-color: #f52d56 !important;
+    width: 130px !important;
+    height: 38px !important;
+    padding: 0px;
+    margin: 0px;
+    font-size: 12pt !important;
+    font-weight: bold;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-transform: none;
+    border-radius: 10px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 p.f {
+    color: #262628 !important;
+    font-size: 19pt;
+    font-weight: 600;
+    margin-top: 38px !important;
+    margin-bottom: 20px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 img.img-thumbnail {
+    height: 200px !important;
+    padding: 0px !important;
+    margin-bottom: 20px !important;
+}
+
+/*
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d ol.carousel-indicators {
+    display: none !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .carousel-multi-item {
+    margin-bottom: 0px !important;
+    padding-bottom: 50px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .carousel-multi-item .col-md-4 {
+    padding: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .carousel-multi-item .col-md-4 .card {
+    box-shadow: none !important;
+}
+
+mdb-card-img img.img-fluid {
+    width: 70% !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .carousel-multi-item .controls-top {
+    margin-bottom: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .btn-floating:first-child {
+    margin: 0% 44% 0% 0% !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .btn-floating:last-child {
+    margin: 0% 0% 0% 44% !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .controls-top {
+    width: 100% !important;
+    position: absolute;
+    top: 40px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.carousel-negocio .carousel-multi-item .carousel-multi-item .controls-top .btn-floating {
+    background-color: #f52d56 !important;
+}*/
+
+/*
+a.btn-floating {
+    position: absolute;
+    top: 105px;
+    left: 0;
+}
+
+.btn-floating i {
+    font-size: 15pt !important;
+    line-height: 41px !important;
+}*/
+
+/*
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.carousel-inner {
+    height: 0px !important;
+}
+
+ol.carousel-indicators {
+    margin-bottom: -2.8rem !important;
+}
+
+.carousel-thumbnails .carousel-indicators li {
+    width: 12rem !important;
+    max-width: 12rem !important;
+}
+
+.carousel-thumbnails .carousel-indicators img {
+    max-width: 12rem !important;
+}*/
+
+div.registrar-negocio div.container-fluid div.row div.col-md-12 div.align-self-center p.fuente-sfui.r {
+    color: #262628 !important;
+    font-size: 22pt;
+    font-weight: 600 !important;
+    margin: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-12 div.align-self-center p,
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6 div.row div.col-md-12 div.d-flex.justify-content-start p {
+    color: #262628 !important;
+    font-size: 19pt;
+    font-weight: 600 !important;
+    margin: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.file-field {
+    display: inline;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.file-field div.file-path-wrapper {
+    padding-left: 0px !important;
+    margin-bottom: 15px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.file-field .waves-light.btn-primary.btn-sm.btn {
+    background-color: #f52d56 !important;
+    width: 110px !important;
+    height: 38px !important;
+    margin: 0px;
+    font-size: 12pt !important;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+    border-radius: 10px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.file-field.md-form div {
+    display: flex !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.file-field.md-form div button {
+    background-color: #f52d56 !important;
+    width: 130px !important;
+    height: 38px !important;
+    margin: 0px 0px 0px 20px;
+    padding: 0px !important;
+    font-size: 12pt !important;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+    border-radius: 10px;
+}
+
+div.registrar-negocio div.container-fluid div.row.ig {
+    margin-top: 81px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.md-form {
+    margin-top: 1rem !important;
+    margin-bottom: 0.8rem !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.md-form input[type=text],
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.md-form textarea.md-textarea,
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.md-form select {
+    color: black !important;
+}
+
+.black-m {
+    color: black !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.md-form input[type=text]:focus:not([readonly]),
+div.registrar-negocio div.container-fluid div.row div.col-md-6.i div.md-form textarea.md-textarea:focus:not([readonly]),
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.md-form input[type=text]:focus:not([readonly]) {
+    box-shadow: 0 1px 0 0 #f52d56;
+    border-bottom: 1px solid #f52d56;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.md-form input[type=text]:focus:not([readonly]) + label,
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.md-form label.active {
+    color: #f52d56;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.select {
+    margin-top: 16px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.selectM {
+    margin-top: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.selectM:last-child {
+    margin-bottom: 16px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.selectM label {
+    color: #757575;
+    font-size: 13px !important;
+    margin-bottom: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.selectM select {
+    border: 1px solid #ced4da00;
+    border-bottom: 1px #ced4da solid;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin-top: -4px !important;
+    cursor: pointer;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.selectM select.form-control {
+    color: #6c757d;
+    padding: 0px !important;
+    border-radius: 0px !important;
+}
+
+.labelID {
+    color: #f52d56 !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.selectM select.form-control:focus {
+    border-color: none !important;
+    box-shadow: none !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6 div.md-form textarea.md-textarea {
+    height: 66px;
+    resize: none;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha {
+    margin-top: 60px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6 div.row.p:first-child {
+    margin-bottom: 16px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6 div.row div.col-md-3,
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6 div.row div.col-md-9 div.row div.col-md-1 {
+    align-self: center !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6 div.row div.col-md-9 div.row div.col-md-1 p {
+    margin-bottom: 0px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6:last-child div.row.b:last-child {
+    margin-top: 50px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row {
+    margin-bottom: 5px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.col-md-5 div.md-form {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.col-md-5 input {
+    margin: 0px !important;
+}
+
+.aa {
+    border-bottom: 2px solid #f52d56 !important;
+}
+
+.disabled-input {
+    pointer-events: none !important;
+}
+
+.disabled-input input::-webkit-input-placeholder { color: #b2b2b2 !important; } 
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .picker__date-display {
+    background-color: #f52d56 !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .picker__footer {
+    display: flex;
+    padding-bottom: 20px !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .picker__date-display .clockpicker-display,
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .picker__date-display .clockpicker-display .clockpicker-display-am-pm .clockpicker-span-am-pm {
+    color: white !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .clockpicker-canvas line {
+    stroke: rgba(245, 45, 86, 0.3) !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .clockpicker-canvas-bg,
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .clockpicker-canvas-bearing {
+    fill:rgba(245, 45, 86, 0.3) !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .clockpicker-canvas-fg {
+    fill:rgba(245, 45, 86, 0.0) !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .clockpicker-plate .clockpicker-dial .clockpicker-tick:hover {
+    background-color: rgba(245, 45, 86, 0.7) !important;
+    color: white !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .clockpicker-button:hover {
+    background-color: rgba(245, 45, 86, 0.8) !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .clockpicker-button.undefined.btn.btn-flat:hover {
+    color: white !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .picker__footer .clockpicker-button:active {
+    background-color: rgba(245, 45, 86, 0.8) !important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .btn-floating.btn-flat.active,
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .btn-floating.btn-flat {
+    background-color: #f52d56!important;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6:last-child div.row:last-child div.col-md-3 button.btn-default {
+    background-color: #676767 !important;
+    margin: 0px !important;
+    width: 120px !important;
+    padding: 10px !important;
+    font-size: 11pt;
+    text-transform: none !important;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+div.registrar-negocio div.container-fluid div.row.ha div.col-md-6:last-child div.row:last-child div.col-md-3 button.btn-primary {
+    background-color: #f52d56 !important;
+    margin: 0px !important;
+    width: 140px !important;
+    padding: 10px !important;
+    text-transform: none !important;
+    font-size: 11pt;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+div.modal div.modal-dialog.r-n div.modal-content div.modal-body {
+    text-align: center;
+}
+
+div.modal div.modal-dialog.r-n div.modal-content div.modal-body i {
+    color: #F52D56 !important;
+    font-size: 50pt;
+}
+
+div.modal div.modal-dialog.r-n div.modal-content div.modal-body p {
+    margin-top: 20px;
+    margin-bottom: 0px !important;
+    text-align: center;
+    font-size: 12pt !important;
+    font-weight: 500;
+}
+
+div.modal div.modal-dialog.r-n div.modal-content div.modal-body div button.btn {
+    background-color: white !important;
+    color: #F52D56;
+    margin: 5px;
+    padding: 5px 20px;
+    box-shadow: none !important;
+    font-size: 13pt;
+    font-family: "SFUI Display";
+    font-weight: 500;
+    text-transform: none !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.galeria-negocio ngx-slick-carousel {
+    width: 90% !important;
+    margin-top: 15px;
+    margin-left: 4% !important;
+    margin-right: 4% !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.galeria-negocio ngx-slick-carousel .slick-list.draggable{
+    pointer-events: none !important;
+}
+
+div.registrar-negocio div.container-fluid div.row div.col-md-6.d div.galeria-negocio ngx-slick-carousel .slick-prev:before, .slick-next:before {
+    color: #f52d56 !important;
+    opacity: 1 !important;
+    font-size: 28px !important;
+}
+
+div.modal div.modal-dialog.verImagen {
+    margin-top: 10%;
+}
+
+div.modal-dialog.verImagen div img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.modal-dialog.verImagen div.modal-header {
+    border-bottom: 0px !important;
+}
+
+
+////////////////////////////////////////////
+////////  INFORMACION MI NEGOCIO  //////////
+////////////////////////////////////////////
+
+div.informacion-mi-negocio {
+    background-color: white !important;
+    padding: 110px 70px 50px 70px;
+}
+
+div.informacion-mi-negocio div.container-fluid {
+    padding: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.in {
+    margin-bottom: 50px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row div.col-md-12 img.img-thumbnail {
+    padding: 0px !important;
+    background-color: none !important;
+    border: none !important;
+    border-radius: 0rem !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row.carousel-img {
+    margin-top: 10%;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row div.col-md-12 ngx-slick-carousel {
+    width: 82% !important;
+    margin-top: 15px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row div.col-md-12 ngx-slick-carousel .slick-list.draggable{
+    pointer-events: none !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row div.col-md-12 ngx-slick-carousel .slick-prev {
+    left: -34px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row div.col-md-12 ngx-slick-carousel .slick-next {
+    right: -27px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row div.col-md-12 ngx-slick-carousel .slick-prev:before,
+.slick-prev:before,
+.slick-next:before {
+    color: #f52d56 !important;
+    opacity: 1 !important;
+    font-size: 28px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.i {
+    padding-right: 30px !important;
+}
+
+div.informacion-mi-negocioo div.container-fluid div.row div.col-md-6.d {
+    padding-left: 30px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6 p.f {
+    color: #262628 !important;
+    font-size: 19pt;
+    font-weight: 700;
+    margin-top: 38px !important;
+    margin-bottom: 20px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.align-self-center p.fuente-sfui.r {
+    color: #262628 !important;
+    font-size: 24pt;
+    font-weight: 600 !important;
+    margin: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.align-self-center p,
+div.informacion-mi-negocio div.container-fluid div.row.ha div.col-md-6 div.row div.col-md-12 div.d-flex.justify-content-start p {
+    color: #262628 !important;
+    font-size: 19pt;
+    font-weight: 200 !important;
+    margin: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-8.d div.row div.col-md-12 div {
+    display: flex;
+    align-items: baseline;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-8.d div.row div.col-md-12 div p.nm {
+    font-size: 35px !important;
+    margin-top: -12px !important;
+    margin-bottom: 0px !important;
+    font-weight: 700;
+    color: #262628 !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-8.d div.row div.col-md-12 div.nn i {
+    font-size: 22px;
+    color: #808080 !important;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-8.d div.row div.col-md-12 p.tn {
+    font-size: 18pt !important;
+    font-weight: 600;
+    color: #262628 !important;
+    margin-bottom: 8px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-8.d div.row div.col-md-12 p.dn {
+    font-size: 16pt !important;
+    font-weight: 500;
+    color: #262628 !important;
+    margin-bottom: 10px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.t,
+div.informacion-mi-negocio div.container-fluid div.row.dir,
+div.informacion-mi-negocio div.container-fluid div.row.hr {
+    margin-bottom: 10px;
+}
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6 div.t,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6 div.p {
+    display: flex !important;
+    align-items: baseline;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.t .col-md-6 div.t div,
+div.informacion-mi-negocio div.container-fluid div.row.t .col-md-6 div.p div,
+div.informacion-mi-negocio div.container-fluid div.row.dir .col-md-12 div.dir div {
+    display: flex;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6 div.t i {
+    font-size: 15pt;
+    transform: rotate(90deg) !important;
+    color: #f52d56 !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.t .col-md-6 div.t div p:first-child,
+div.informacion-mi-negocio div.container-fluid div.row.t .col-md-6 div.p div p:first-child,
+div.informacion-mi-negocio div.container-fluid div.row.dir .col-md-12 div.dir div p:first-child {
+    font-weight: 600 !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6 div.p i,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.dir i,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.h i {
+    color: #f52d56 !important;
+    font-size: 15pt;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6 div.t p,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6 div.p p,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.h p {
+    font-size: 16pt !important;
+    font-weight: 500;
+    margin-left: 10px !important;
+    margin-bottom: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.dir p {
+    font-size: 16pt !important;
+    margin-left: 15px;
+    margin-bottom: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.h p {
+    margin-left: 12px !important;
+    font-weight: 600;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.dir {
+    display: flex !important;
+    align-items: baseline;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row div.col-md-4 p.fuente-sfui {
+    margin-left: 33px !important;
+    font-size: 16pt;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row div.col-md-8 p.fuente-sfui {
+    font-size: 16pt;
+    margin-right: 46px;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row.ps div.col-md-6 {
+    padding-left: 42px;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row.ps {
+    text-align: center;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row.ps div.col-md-6 p.s,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row.ps div.col-md-6 p.p {
+    font-size: 17pt;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row.ps div.col-md-6 p.sn,
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row.ps div.col-md-6 p.pn {
+    font-size: 18.5pt;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/*div.informacion-mi-negocio div.container-fluid div.row div.col-md-6.hrs div.row.ps div.col-md-6 p:last-child {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}*/
+
+div.informacion-mi-negocio div.container-fluid div.row.pp {
+    margin-top: 108px !important;
+    margin-bottom: 40px;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.pp div.col-md-6 p {
+    font-size: 24pt;
+    font-weight: 600;
+    margin-bottom: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.pp div.col-md-6 button {
+    background-color: #F52D56 !important;
+    width: 169px !important;
+    height: 50px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    text-transform: none;
+    border-radius: 8px;
+    font-size: 14pt;
+    font-weight: 500 !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.pp div.col-md-6 button i {
+    font-size: 12pt !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 div.md-form {
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 div.md-form .form-control {
+    padding-left: 40px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 div.md-form input[type=text]:focus:not([readonly]) {
+    box-shadow: 0 1px 0 0 #f52d56;
+    border-bottom: 1px solid #f52d56;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 div.md-form .prefix ~ input {
+    margin-left: 0px !important;
+    font-size: 16pt;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 div.md-form .prefix {
+    font-size: 15pt;
+    top: 0.5rem !important;
+    margin-left: 0.3rem !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 div.md-form .prefix.active {
+    color: #f52d56 !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table {
+    width: 100% !important;
+    margin-bottom: 0px !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table th {
+    font-size: 12pt !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    text-align: center;
+    font-family: "SFUI Display";
+    font-weight: 600;
+    color: #262628 !important;
+    font-size: 11pt;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table td {
+    vertical-align: middle !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td {
+    text-align: center;
+    font-family: "SFUI Display";
+    color: #262628 !important;
+    font-size: 12pt;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td div.f {
+    display: flex !important;
+    justify-content: center;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td button.btn-primary {
+    background-color: #398BF7 !important;
+    width: 120px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    padding: 0px !important;
+    text-transform: none;
+    font-size: 11pt;
+    pointer-events: none;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td button.btn-warning {
+    background-color: #FFB22B !important;
+    width: 120px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    padding: 0px !important;
+    text-transform: none;
+    font-size: 11pt;
+    pointer-events: none;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td .dropdown-toggle::after {
+    display: none !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td div div div.dropdown-menu.dropdown-primary.dropdown-menu-right.various-dropdown {
+    top: 15px;
+    position: absolute !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td div div div.dropdown-menu.dropdown-primary.dropdown-menu-right.various-dropdown.fadeInDropdown {
+    top: 15px;
+    position: absolute !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row div.col-md-12 table.table tbody tr td div i {
+    font-size: 12pt;
+    margin: 10px !important;
+    pointer-events: all;
+    cursor: pointer;
+    color: #808080 !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.no-data {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.no-data p.npr {
+    margin-top: 8px !important;
+    font-size: 16pt;
+    color: #808080;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.no-data p.pn {
+    font-size: 17.5pt;
+    color: #808080;
+    margin: 0px !important;
+    font-weight: 600 !important;
+}
+
+div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.no-data img {
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+div.modal.i-n div.modal-dialog {
+    margin-top: 3% !important;
+}
+
+div.modal.i-n div.modal-dialog.r-n div.modal-content div.modal-header {
+    padding: 2rem 2rem 1rem 2rem;
+    border-bottom: none !important;
+}
+
+div.modal.i-n div.modal-dialog.r-n div.modal-content div.modal-header h4 {
+    font-weight: 500;
+}
+
+div.modal.i-n div.modal-dialog.r-n div.modal-content div.modal-header button {
+    padding: 0rem 1rem !important;
+    font-size: 35pt;
+    color: #BFBFBF;
+    font-weight: 400;
+}
+
+// Eliminar
+
+div.modal.e-p div.modal-dialog {
+    margin-top: 18%;
+}
+
+div.modal.e-p div.modal-dialog div.modal-content div.modal-body {
+    padding: 25px !important;
+}
+
+div.modal.e-p div.modal-dialog div.modal-content div.modal-body p {
+    font-size: 12pt;
+    margin-bottom: 0px !important;
+    font-weight: 500;
+}
+
+div.modal.e-p div.modal-dialog div.modal-content div.modal-body div button.btn {
+    background-color: white !important;
+    color: #F52D56;
+    margin: 5px;
+    padding: 5px 20px;
+    box-shadow: none !important;
+    font-family: "SFUI Display";
+    font-weight: 600;
+}
+
+// Ata, Ver
+
+div.modal.i-n div.modal-dialog.a-p {
+    margin-top: 5%;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-header {
+    padding: 2rem 2rem 1rem 2rem;
+    border-bottom: none !important;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-header h4 {
+    font-weight: 500;
+    font-size: 19.5pt;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body {
+    padding: 0rem 2rem 2rem 2rem !important;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form input[type=text]:focus:not([readonly]),
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea:focus:not([readonly]) {
+    box-shadow: 0 1px 0 0 #F52D56;
+    border-bottom: 1px solid #F52D56;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form input[type=text]:focus:not([readonly]) + label,
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea:focus:not([readonly]) + label {
+    color: #F52D56;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body label.active {
+    color: #F52D56;
+    font-weight: 500;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea {
+    resize: none !important;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div button.btn-default.btn {
+    background-color: #707070 !important;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div button.btn {
+    background-color: #F52D56 !important;
+    color: #ffffff;
+    margin: 5px;
+    padding: 0px !important;
+    box-shadow: none !important;
+    font-family: "SFUI Display";
+    font-weight: bold;
+    text-transform: none;
+    border-radius: 6px;
+    height: 40px;
+    width: 135px;
+    font-size: 12pt;
+}
+
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-header {
+    padding: 2rem 2rem 1rem 2rem;
+    border-bottom: none !important;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-header h4 {
+    font-weight: bold;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-header .close {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #BFBFBF;
+    opacity: 1;
+    padding: 0rem 1rem;
+    margin: -1.5rem -1rem -1rem auto;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-header button:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-body {
+    padding: 0rem 2rem 2rem 2rem !important;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-body i {
+    color: #F52D56 !important;
+    font-size: 50pt;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-body p.fuente-sfui.n {
+    margin-top: 20px;
+    margin-bottom: 0px !important;
+    font-size: 12pt !important;
+    font-weight: 600;
+    text-align: initial;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-body p.fuente-sfui.p {
+    color: #F52D56 !important;
+    font-size: 12pt !important;
+    font-weight: 600;
+    text-align: initial;
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-body p.fuente-sfui.d {
+    font-weight: 600;
+    font-size: 12pt !important;
+    text-align: initial;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+div.modal.i-n div.modal-dialog.v-p div.modal-content div.modal-body p.fuente-sfui.d2 {
+    font-weight: 500;
+    font-size: 12pt !important;
+    text-align: justify;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+
+// Querys
+
+@media (max-width: 1300px) {
+
+    /*div.informacion-mi-negocio div.container-fluid div.row div.col-md-4.i div.row div.col-md-12 ngx-slick-carousel {
+        width: 58% !important;
+    }*/
+
+}

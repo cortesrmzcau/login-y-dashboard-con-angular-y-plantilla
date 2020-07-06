@@ -1,0 +1,76 @@
+<div class="login">
+  <div class="mask flex-center">
+    <div class="container">
+      <div>
+        <div class="logo">
+          <img src="../../assets/Logo1.jpg" alt="" height="40px">
+          <p class="fuente-dosis">Vendtly</p>
+        </div>
+        <form *ngIf="form_login" [formGroup]="formLogin" (ngSubmit)="formularioIngresar()">
+          <p class="inicio-sesion fuente-sfui-bold">Iniciar Sesión</p>
+          <p class="inicio-info fuente-sfui">Accede a tu panel para administrar tus negocios</p>
+          <div class="md-form">
+            <input mdbInput placeholder="Email" type="text" id="emailFL" formControlName="emailFL" class="form-control">
+          </div>
+          <div class="md-form">
+            <input mdbInput placeholder="Contraseña" type="password" id="passwordFL" formControlName="passwordFL" class="form-control">
+          </div>
+          <div *ngIf="error_no_login">
+            <p class="error-no-login">El correo electronico o la contraseña son incorrectas, intente nuevamente</p>
+          </div>
+          <div class="ingresar">
+            <button class="btn-personalizado" type="submit" mdbBtn color="primary" mdbWavesEffect
+            routerLinkActive="active">Ingresar</button>
+            <a href="#" class="recovery-password fuente-sfui">¿Olvidaste tu contraseña?</a>
+          </div>
+          <a href="#" class="fuente-sfui">O inicia sesión con</a>
+          <div class="container-social-buttons">
+            <button type="button" mdbBtn size="lg" color="fb" class="waves-light" mdbWavesEffect>
+              <i class="fab fa-facebook-f left"></i>Facebook
+            </button>
+            <button type="button" mdbBtn size="lg" color="gplus" class="waves-light" mdbWavesEffect>
+              <i class="fab fa-google-plus left"></i>Google
+            </button>
+            <button type="button" mdbBtn size="lg" color="tw" class="waves-light" mdbWavesEffect>
+              <i class="fab fa-twitter left"></i>Twitter
+            </button>
+          </div>
+          <a href="#" class="fuente-sfui-bold" (click)="mostrarFormRegistro()">Registra una nueva cuenta</a>
+        </form>
+
+        <form *ngIf="form_registro" [formGroup]="formRegistro" (ngSubmit)="registrarUsuario()">
+          <p class="inicio-sesion fuente-sfui-bold">Registrate</p>
+          <p class="inicio-info fuente-sfui">Accede a tu panel para administrar tus negocios</p>
+          <div class="md-form">
+            <input mdbInput placeholder="Nombre Completo" type="text" id="nombreFR" formControlName="nombreFR" class="form-control">
+          </div>
+          <div class="md-form">
+            <input mdbInput placeholder="Email" type="text" id="emailFR" formControlName="emailFR" class="form-control">
+          </div>
+          <div class="md-form">
+            <input mdbInput placeholder="Contraseña" type="password" id="passwordFR" formControlName="passwordFR" class="form-control">
+          </div>
+          <div *ngIf="error_no_registro">
+            <p class="error-no-registro">El correo se encuentra registrado, intente con otro nuevamente</p>
+          </div>
+          <div class="ingresar">
+            <button class="btn-personalizado" type="submit" mdbBtn color="primary" mdbWavesEffect>Registrar</button>
+          </div>
+          <a href="#" class="fuente-sfui">O registrate con</a>
+          <div class="container-social-buttons">
+            <button type="button" mdbBtn size="lg" color="fb" class="waves-light" mdbWavesEffect>
+              <i class="fab fa-facebook-f left"></i>Facebook
+            </button>
+            <button type="button" mdbBtn size="lg" color="gplus" class="waves-light" mdbWavesEffect>
+              <i class="fab fa-google-plus left"></i>Google
+            </button>
+            <button type="button" mdbBtn size="lg" color="tw" class="waves-light" mdbWavesEffect>
+              <i class="fab fa-twitter left"></i>Twitter
+            </button>
+          </div>
+          <a href="#" class="fuente-sfui-bold" (click)="ocultarFormRegistro()">Inicia sesión con tu cuenta</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

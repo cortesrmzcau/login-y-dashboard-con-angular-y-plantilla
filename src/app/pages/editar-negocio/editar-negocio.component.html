@@ -1,0 +1,530 @@
+<app-nav></app-nav>
+<div class="registrar-negocio">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="align-self-center">
+                    <p class="fuente-sfui r">Editar del Negocio</p>
+                </div>
+            </div>
+        </div>
+        <form #editarNegocioF="ngForm" (ngSubmit)="formularioEditarN(editarNegocioF)" autocomplete="off">
+            <input type="text" name="$key" #$key="ngModel" [(ngModel)]="_RegistrarNegocioService.editarNegocio.$key">
+            <div class="row">
+                <div class="col-md-6 i">
+                    <p class="fuente-sfui f">Foto de Perfil</p>
+                    <img *ngIf="!mostrarImagen" src="{{ _RegistrarNegocioService.editarNegocio.foto }}"
+                        class="img-thumbnail" height="200px">
+                    <img *ngIf="mostrarImagen" [src]="imagenTemporal" class="img-thumbnail">
+                    <div class="file-field md-form i">
+                        <div #noEventInput>
+                            <input class="file-path" type="text" placeholder="Foto de perfil del Negocio"
+                            name="foto" [ngModel]="_RegistrarNegocioService.editarNegocio.foto" #inputImage>
+                        </div>
+                        <div mdbBtn color="primary" size="sm" mdbWavesEffect
+                            class="waves-light btn-primary btn-sm btn waves-effect">
+                            <input type="file" (change)="detectFileFotoPortada($event)"
+                            required accept="image/*">
+                            <span class="text-center">Examinar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d align-self-end">
+                    <div class="editar-galeria-negocio">
+                        <div *ngIf="galeriaFotosNegocio">
+                            <ngx-slick-carousel class="carousel" 
+                            #slickModal="slick-carousel" 
+                            [config]="slideConfig" 
+                            (init)="slickInit($event)"
+                            (breakpoint)="breakpoint($event)"
+                            (afterChange)="afterChange($event)"
+                            (beforeChange)="beforeChange($event)">
+                                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                                    <img class="image" src="{{ slide.img }}" width="100%">
+                                    <div class="iconos" style="position: absolute;">
+                                        <mdb-icon fas icon="eye"
+                                            (click)="verImagen(slide.img); modalMostrarImagen.show()">
+                                        </mdb-icon>
+                                        <mdb-icon fas icon="trash" (click)="borrarImagen(
+                                            slide.$key,
+                                            _RegistrarNegocioService.editarNegocio.$key
+                                            )"></mdb-icon>
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                            <button mdbBtn type="button" color="primary" mdbWavesEffect class="btn-subir-fotos"
+                            (click)="mostrarSubirFotos()">
+                            Subir fotos</button>
+                        </div>
+                        <div *ngIf="subirFotosGaleriaNegocio">
+                            <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                                <ngx-dropzone-label>
+                                    <div>
+                                        <h2>Click para agregar y previsualizar las imagenes que se subiran a la galeria</h2>
+                                    </div>
+                                </ngx-dropzone-label>
+                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                    <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                                </ngx-dropzone-image-preview>
+                            </div>
+                            <button mdbBtn type="button" color="primary" mdbWavesEffect class="btn-ver-borrar"
+                            (click)="mostrarFotosGaleria()">
+                            Ver y borrar</button>
+                        </div>
+                        <!--<ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+                            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                                <img src="{{ slide.img }}" alt="">
+                                <div class="back-grey">
+                                    <div>
+                                        <mdb-icon fas icon="eye"
+                                            (click)="verImagen(slide.img); modalMostrarImagen.show()">
+                                        </mdb-icon>
+                                        <mdb-icon fas icon="trash"></mdb-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </ngx-slick-carousel>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row ig">
+                <div class="col-md-12">
+                    <div class="align-self-center">
+                        <p class="fuente-sfui">Información general</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 i">
+                    <div class="md-form">
+                        <input mdbInput type="text" id="nombreFNE" class="form-control" #nombreNegocio
+                        name="nombre" [ngModel]="_RegistrarNegocioService.editarNegocio.nombre"
+                        (blur)="blurInputNombre($event)" (focus)="focusInputNombre()">
+                        <label for="nombreFNE">Nombre del Negocio</label>
+                    </div>
+                </div>
+                <div class="col-md-6 d">
+                    <div class="selectM">
+                        <label #labelGiro>Giro del Negocio</label>
+                        <select name="giro" [(ngModel)]="_RegistrarNegocioService.editarNegocio.giro"
+                            class="form-control" #selectGiro (change)="selectChangeGiro($event.target.value)">
+                            <option *ngFor="let giros of listGiros;let x = index"
+                            [ngValue]="giros.data"> {{ giros.data }} </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 i">
+                    <div class="md-form">
+                        <textarea type="text" id="form7" class="md-textarea form-control" mdbInput
+                            name="descripcion" [ngModel]="_RegistrarNegocioService.editarNegocio.descripcion"
+                            #descripcionNegocio (blur)="blurInputDescripcion($event)"
+                            (focus)="focusInputDescripcion()">
+                        </textarea>
+                        <label for="descripcion">Descripción del Negocio</label>
+                    </div>
+                </div>
+                <div class="col-md-6 d">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="selectM">
+                                <label #labelCategoria>Categoría del Negocio</label>
+                                <select [(ngModel)]="_RegistrarNegocioService.editarNegocio.categoria"
+                                    name="categoria" class="form-control" #selectCategoria
+                                    (change)="selectChangeCategoria($event.target.value)">
+                                    <option *ngFor="let categoria of listCategorias;let x = index"
+                                    [ngValue]="categoria.data" class="dropdown-item"> {{ categoria.data }} </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <input mdbInput type="text" id="telefono" class="form-control"
+                                name="telefono" [ngModel]="_RegistrarNegocioService.editarNegocio.telefono"
+                                #telefonoNegocio (blur)="blurInputTelefono($event)" (focus)="focusInputTelefono()">
+                                <label for="telefono">Teléfono</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 i">
+                    <div class="md-form">
+                        <input mdbInput type="text" id="direccion" class="form-control"
+                        name="direccion" [ngModel]="_RegistrarNegocioService.editarNegocio.direccion"
+                        #direccionNegocio (blur)="blurInputDirecion($event)" (focus)="focusInputDirecion()">
+                        <label for="direccion">Dirección</label>
+                    </div>
+                </div>
+                <div class="col-md-6 d">
+                    <div class="md-form">
+                        <input mdbInput type="text" id="pagina" class="form-control"
+                        name="pagina" [ngModel]="_RegistrarNegocioService.editarNegocio.pagina"
+                        #paginaNegocio (blur)="blurInputPagina($event)" (focus)="focusInputPagina()">
+                        <label for="pagina">Página Web</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row ha">
+                <div class="col-md-6 i">
+                    <div class="row p">
+                        <div class="col-md-12">
+                            <div class="d-flex justify-content-start">
+                                <p class="fuente-sfui">Horario de Atención</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3">
+                            <mdb-checkbox (click)="checarLunes($event)"
+                                [(ngModel)]="checkLunes" name="checkLunes">Lunes
+                            </mdb-checkbox>
+                        </div>
+                        <div class="col-sm-12 col-md-9">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>de</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaLunesAbiertCerrado1>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioLunesAM"
+                                            [ngModel]="_RegistrarNegocioService.editarNegocio.horarioLunesAM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>a</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaLunesAbiertCerrado2>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioLunesPM"
+                                            [ngModel]="_RegistrarNegocioService.editarNegocio.horarioLunesPM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <mdb-checkbox (click)="checarMartes($event)"
+                                [(ngModel)]="checkMartes" name="checkMartes">Martes
+                            </mdb-checkbox>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>de</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaMartesAbiertCerrado1>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioMartesAM"
+                                            [ngModel]="horarioMartesAM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>a</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaMartesAbiertCerrado2>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioMartesPM"
+                                            [ngModel]="horarioMartesPM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <mdb-checkbox (click)="checarMiercoles($event)">Miercoles</mdb-checkbox>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>de</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaMiercolesAbiertCerrado1>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioMiercolesAM"
+                                            [ngModel]="horarioMiercolesAM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>a</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaMiercolesAbiertCerrado2>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioMiercolesPM"
+                                            [ngModel]="horarioMiercolesPM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <mdb-checkbox (click)="checarJueves($event)">Jueves</mdb-checkbox>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>de</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaJuevesAbiertCerrado1>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioJuevesAM"
+                                            [ngModel]="horarioJuevesAM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>a</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaJuevesAbiertCerrado2>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioJuevesPM"
+                                            [ngModel]="horarioJuevesPM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <mdb-checkbox (click)="checarViernes($event)">Viernes</mdb-checkbox>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>de</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaViernesAbiertCerrado1>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioViernesAM"
+                                            [ngModel]="horarioViernesAM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>a</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaViernesAbiertCerrado2>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioViernesPM"
+                                            [ngModel]="horarioViernesPM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <mdb-checkbox (click)="checarSabado($event)">Sabado</mdb-checkbox>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>de</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaSabadoAbiertCerrado1>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioSabadoAM"
+                                            [ngModel]="horarioSabadoAM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>a</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaSabadoAbiertCerrado2>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioSabadoPM"
+                                            [ngModel]="horarioSabadoPM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <mdb-checkbox (click)="checarDomingo($event)">Domingo</mdb-checkbox>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>de</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaDomingoAbiertCerrado1>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioDomingoAM"
+                                            [ngModel]="horarioDomingoAM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>a</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div #DiaDomingoAbiertCerrado2>
+                                        <mdb-time-picker
+                                            [buttonLabel]="'Ok'"
+                                            [twelvehour]="true"
+                                            [darktheme]="false"
+                                            [placeholder]="'Seleccion Hora'"
+                                            name="horarioDomingoPM"
+                                            [ngModel]="horarioDomingoPM">
+                                        </mdb-time-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex justify-content-start">
+                                <p class="fuente-sfui">Ubicación Geolocalizada</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <input mdbInput type="text" id="latitud" class="form-control"
+                                name="latitud" [ngModel]="_RegistrarNegocioService.editarNegocio2.latitud"
+                                #latitudNegocio (blur)="blurInputLatitud($event)" (focus)="focusInputLatitud()">
+                                <label for="latitud">Longitud</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <input mdbInput type="text" id="longitud" class="form-control"
+                                name="longitud" [ngModel]="_RegistrarNegocioService.editarNegocio2.longitud"
+                                #longitudNegocio (blur)="blurInputLongitud($event)" (focus)="focusInputLongitud()">
+                                <label for="longitud">Latitud</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row b">
+                        <div class="col-sm-6 col-md-6"></div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="d-flex justify-content-end">
+                                <button mdbBtn type="button" color="default" mdbWavesEffect
+                                    routerLinkActive="active" routerLink="/mis-negocios">Regresar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="d-flex justify-content-end">
+                                <button mdbBtn type="submit" color="primary" mdbWavesEffect
+                                [disabled]="editarNegocioF.invalid">Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div mdbModal #modalMostrarImagen="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog verImagen" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalMostrarImagen.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img [src]="urlFoto" alt="" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>

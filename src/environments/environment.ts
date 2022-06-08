@@ -4,14 +4,14 @@
 
 export const environment = {
   production: false,
-  firebaseConfig: {
-    apiKey: "AIzaSyCfiAqDJ-BXqAPJHZ05C9uQT-8uGk2l9cY",
-    authDomain: "vendtly-5e15b.firebaseapp.com",
-    databaseURL: "https://vendtly-5e15b.firebaseio.com",
-    projectId: "vendtly-5e15b",
-    storageBucket: "vendtly-5e15b.appspot.com",
-    messagingSenderId: "91392561359",
-    appId: "1:91392561359:web:92e79e198b891b129d67ba"
+  firebaseConfig: {    
+    apiKey: "AIzaSyAn0PBMf8tfNP-nHac3X982h3KKAF7_iJk",
+    authDomain: "bixy-322b7.firebaseapp.com",
+    projectId: "bixy-322b7",
+    databaseURL: "https://bixy-322b7-default-rtdb.firebaseio.com/",
+    storageBucket: "bixy-322b7.appspot.com",
+    messagingSenderId: "305738087066",
+    appId: "1:305738087066:web:1828e959d66d15b2883d23"
   }
 };
 

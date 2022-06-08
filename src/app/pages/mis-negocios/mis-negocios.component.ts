@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, AngularFireAction } from '@angular/fire/database';
-import { AuthService, MisNegociosService } from '../../servicios/servicios.index';
 import * as _swal from 'sweetalert';
 import { SweetAlert } from 'sweetalert/typings/core';
-import { Subject, Observable, BehaviorSubject } from 'rxjs';
-import { registroNegocioBD } from '../../modelos/registrar-negocio';
 
 const swal: SweetAlert = _swal as any;
 
@@ -15,48 +11,57 @@ const swal: SweetAlert = _swal as any;
 })
 export class MisNegociosComponent implements OnInit {
 
-  nombre: string;
-
-  negociosUsuario: any = new Array;
-  sinNegocios: boolean;
+  negociosUsuarioResultado: any[];
+  negociosUsuarioResultado2: any[];
   sinResultadosBusquedaNegocio: boolean;
+  sinNegocios: boolean;
   tablaNegocios: boolean;
 
   constructor(
-    private firebase: AngularFireDatabase,
-    private _AuthService: AuthService,
-    private _MisNegociosService: MisNegociosService
   ) { }
 
   ngOnInit() {
-    this.consultaNegociosCuenta();
+    this.consultaNegocios();
   }
 
-  consultaNegociosCuenta() {
-    this._AuthService.isAuth().subscribe(auth => {
-      if(auth) {
-        this.firebase.list('tienda_informacion/' + auth.uid).snapshotChanges().subscribe(
-          res => {
-            this.negociosUsuario = [];
-            res.forEach(element => {
-              let x: any = element.payload.toJSON();
-              x['$key'] = element.key;
-              this.negociosUsuario.push(x);
-            });
-  
-            if(this.negociosUsuario.length > 0) {
-              this.sinNegocios = false;
-              this.tablaNegocios = true;
-            } else {
-              this.sinNegocios = true;
-              this.tablaNegocios = false;
-            }
-        });
+  consultaNegocios() {
+    this.negociosUsuarioResultado = [
+      {
+        $key: "1",
+        foto: "./assets/ChronosPC.jpg",
+        nombreNegocio: "Chronos PC",
+        giro: "Tienda de Computadoras",
+        categoria: "Computadoras y Accesorios",
+        direccion: "Blvd. Adolfo Ruíz Cortines 519, Tajin, 93330 Poza Rica de Hidalgo, Ver.",
+        jerarquia: "Principal",
+        productosRegistrados: "100"
+      },
+      {
+        $key: "2",
+        foto: "./assets/Kattas.png",
+        nombreNegocio: "Kattas",
+        giro: "Tienda de Ropa",
+        categoria: "Ropa y Accesorios",
+        direccion: "Calle 6 Ote. s/n, Obrera, 93260 Poza Rica de Hidalgo, Ver.",
+        jerarquia: "Sucursal",
+        productosRegistrados: "200"
       }
-    });
+    ];
+
+    //this.negociosUsuarioResultado = [];
+
+    if(this.negociosUsuarioResultado.length == 0) {
+      this.sinNegocios = true;
+    }
+
+    if (this.negociosUsuarioResultado.length > 0) {
+      this.sinNegocios = false;
+      this.tablaNegocios = true;
+    }
+
   }
 
-  deleteNegocio(keyNegocio) {
+  deleteNegocio(nombreNegocio: string) {
     swal({
       text: "Al eliminar el negocio toda su información y los productos asociados serán borrados, ¿Está seguro de eliminar este negocio?",
       icon: "warning",
@@ -64,48 +69,30 @@ export class MisNegociosComponent implements OnInit {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        swal("El Negocio se ha eliminado exitosamente", {
+        swal("El Negocio " + nombreNegocio + " se ha eliminado exitosamente", {
           icon: "success",
-        });
-        this._AuthService.isAuth().subscribe(auth => {
-          this._MisNegociosService.borrarNegocio(auth.uid, keyNegocio);
         });
       }
     });
   }
 
-  convertirNegocio(keyNegocio) {
-    this._AuthService.isAuth().subscribe(auth => {
-      this._MisNegociosService.convertirNegocio(auth.uid, keyNegocio);
-    });
-  }
-
-  buscarNegocio($event) {    
-    this._AuthService.isAuth().subscribe(auth => {
-      this.firebase.list('tienda_informacion/' + auth.uid).snapshotChanges().subscribe(
-        res => {
-          this.negociosUsuario = [];
-          res.forEach(element => {
-            let x: any = element.payload.toJSON();
-            x['$key'] = element.key;
-            this.negociosUsuario.push(x);
-          });
-          this.negociosUsuario = this.negociosUsuario.filter(res => {
-            return res.nombre.toLocaleLowerCase().match($event.target.value.toLocaleLowerCase());
-          });
-
-          if(this.negociosUsuario.length == 0) {
-            this.sinResultadosBusquedaNegocio = true;
-            this.tablaNegocios = false;
-          } else {
-            this.tablaNegocios = true;
-            this.sinResultadosBusquedaNegocio = false;
-          }
-        });
-    });
-
+  buscarNegocio($event) {
     if($event.target.value == '') {
-      this.consultaNegociosCuenta();
+      this.consultaNegocios();
+      console.clear();
+    } else {
+      this.negociosUsuarioResultado2 = [];
+
+      this.negociosUsuarioResultado2 = this.negociosUsuarioResultado.filter(res => {
+        return res.nombreNegocio.toLocaleLowerCase().match($event.target.value.toLocaleLowerCase());
+      });
+
+      console.log(this.negociosUsuarioResultado2);
+
+      if(this.negociosUsuarioResultado.length != 0) {
+        console.log('Si hay negocios');
+        this.negociosUsuarioResultado = this.negociosUsuarioResultado2;
+      }
     }
   }
 

@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
 /////////////////////////////////////////
 //////////////   General   //////////////
 /////////////////////////////////////////
@@ -102,51 +100,6 @@
     border-color: #f52d56;
 }
 
-/*
-div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    display: none;
-}
-
-
-div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea.container::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-    
-div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea.container::-webkit-scrollbar-thumb:hover {
-    background: #b3b3b3;
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-}
-    
-div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form textarea.md-textarea.container::-webkit-scrollbar-thumb:active {
-    background-color: #999999;
-}*/
-/*div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .scrollbar {
-    margin-left: 30px;
-    float: left;
-    height: 300px;
-    width: 65px;
-    background: #fff;
-    overflow-y: scroll;
-    margin-bottom: 25px;
-    }
-div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .force-overflow {
-    min-height: 450px;
-}
-    
-div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .scrollbar-primary::-webkit-scrollbar {
-    width: 12px;
-    background-color: #F5F5F5;
-}
-    
-div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div.md-form .scrollbar-primary::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #4285F4;
-}*/
-
 .custom-dropzone {
     display: flex;
     align-items: center;
@@ -191,6 +144,202 @@ ngx-dropzone-label,
     font-weight: 500 !important;
 }
 
+/*
+p.etiquetaPDescripcion {
+    position: absolute;
+    top: 0px;
+    color: #757575;
+}
+
+.etiquetaPDescripcion2 {
+    transform: translateY(-25px);
+    transition: 0.4s;
+    color: #f52d56 !important;
+    font-size: 10pt !important;
+    font-weight: bold;
+}
+
+.etiquetaPDescripcion3 {
+    transform: translateY(0px);
+    transition: 0.4s;
+    color: #757575 !important;
+    font-size: 12pt !important;
+}
+
+hr.hrEtiqueta {
+    visibility: hidden;
+    margin-top: -32px;
+    margin-bottom: 32px !important;
+    border: 0;
+    border-top: 2px solid rgb(245 45 86);
+}
+
+angular-editor.no-eventos {
+    pointer-events: none !important;
+}
+
+span.angular-editor-placeholder {
+    padding: 0px !important;
+    height: 200px !important;
+    color: #757575 !important;
+}
+
+.angular-editor-toolbar {
+    display: none !important;
+}
+
+.cke.cke_1.cke_reset_all.cke_chrome.cke_editor_editor1.cke_float.cke_ltr.cke_browser_webkit {
+    z-index: -9999 !important;
+}
+
+.angular-editor-textarea.cke_editable.cke_editable_inline.cke_contents_ltr.cke_show_borders {
+    font-size: 12pt !important;
+    outline: 0 !important;
+    padding: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    resize: none !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+span.cke_top.cke_reset_all,
+span.cke_bottom.cke_reset_all {
+    display: none !important;
+}
+
+.cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders {
+    margin: 0px !important;
+}
+
+.cke_editable {
+    margin: 0px !important;
+    font-size: 13px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.cke_chrome {
+    border-top: 0px transparent !important;
+    border-left: 0px transparent !important;
+    border-right: 0px transparent !important;
+    border-bottom: 2px solid #e4e6e7 !important;
+}
+
+*/
+
+span.cke_top.cke_reset_all,
+span.cke_bottom.cke_reset_all {
+    display: none !important;
+}
+
+.cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders {
+    margin: 0px !important;
+}
+
+.cke_editable {
+    margin: 0px !important;
+    font-size: 13px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.cke_chrome {
+    border-top: 0px transparent !important;
+    border-left: 0px transparent !important;
+    border-right: 0px transparent !important;
+    border-bottom: 2px solid #e4e6e7 !important;
+}
+
+.bloqueo-angular-editor-ver-descripcion {
+    position: absolute;
+    width: 419px;
+    height: 325px;
+    background-color: #f1f1f100;
+    z-index: 9;
+}
+
+angular-editor.angular-editor-descripcion .angular-editor-textarea {
+    overflow: hidden !important;
+    height: 100px !important;
+    border-bottom: none !important;
+}
+
+angular-editor.angular-ver-descripcion .angular-editor-textarea {
+    height: 320px !important;
+    border-bottom: none !important;
+}
+
+.angular-editor-toolbar {
+    display: none !important;
+}
+
+.cke.cke_1.cke_reset_all.cke_chrome.cke_editor_editor1.cke_float.cke_ltr.cke_browser_webkit {
+    z-index: -9999 !important;
+}
+
+.angular-editor-textarea.cke_editable.cke_editable_inline.cke_contents_ltr.cke_show_borders {
+    font-size: 12pt !important;
+    outline: 0 !important;
+    padding: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    resize: none !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+.angular-editor-textarea {
+    border: none !important;
+    resize: none !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+.angular-editor-textarea:focus-visible {
+    outline: none !important;
+}
+
+p.etiquetaPDescripcion {
+    position: absolute;
+    top: 0px;
+    color: #757575;
+    font-weight: 300;
+}
+
+.etiquetaPDescripcion2 {
+    transform: translateY(-25px);
+    transition: 0.4s;
+    color: #f52d56 !important;
+    font-size: 10pt !important;
+    font-weight: bold !important;
+}
+
+.etiquetaPDescripcion3 {
+    transform: translateY(0px);
+    transition: 0.4s;
+    color: #757575 !important;
+    font-size: 12pt !important;
+}
+
+span.angular-editor-placeholder {
+    padding: 0px !important;
+    height: 200px !important;
+    color: #757575 !important;
+}
+
+hr.hrEtiqueta {
+    visibility: hidden;
+    margin-top: -32px;
+    margin-bottom: 32px !important;
+    border: 0;
+    border-top: 2px solid rgb(245 45 86);
+}
+
+angular-editor.no-eventos {
+    pointer-events: none !important;
+}
+
 .custom-dropzone {
     overflow-y: hidden !important;
 }
@@ -209,9 +358,10 @@ mdb-icon {
 }
 
 p.no_fotos_negocio {
-    margin-top: 15px;
     color: #F52D56;
     font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 0px;
 }
 
 div.slide.slick-slide.slick-current.slick-active,
@@ -219,13 +369,49 @@ div.slide.slick-slide.slick-active {
     outline: 0px;
 }
 
-mdb-carousel mdb-carousel-item div img.imagenes-producto{
-    width: 200px !important;
-    margin-left: auto;
-    margin-right: auto;
-    background: #ffffff00 !important;
+mdb-carousel.editarProducto .carousel-indicators {
+    display: none;
 }
 
+mdb-carousel.editarProducto mdb-carousel-item:hover {
+    opacity: 0.8 !important;
+    transition: 0.2s;
+}
+
+mdb-carousel.editarProducto mdb-carousel-item div.container-galeria,
+mdb-carousel.verProducto mdb-carousel-item div.container-galeria {
+    height: 200px;
+    width: 100%;
+    background: #0000002b !important;
+}
+
+mdb-carousel.editarProducto mdb-carousel-item div.container-galeria img,
+mdb-carousel.verProducto mdb-carousel-item div.container-galeria img {
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+mdb-carousel.editarProducto mdb-carousel-item mdb-icon {
+    display: block;
+    position: absolute;
+    top: 42%;
+    left: 47%;
+    font-size: 20pt;
+    color: white;
+    opacity: 0;
+}
+
+mdb-carousel.editarProducto mdb-carousel-item:hover mdb-icon {
+    opacity: 1;
+    color: white;
+    cursor: pointer;
+}
+
+.form-check-input[type=checkbox]:checked + label:before {
+    border-right: 2px solid #f52d56 !important;
+    border-bottom: 2px solid #f52d56 !important;
+}
 
 /////////////////////////////////////////
 //////////////   Navbar   ///////////////
@@ -364,6 +550,26 @@ nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4 p {
     margin-left: 20px !important;
     font-weight: normal;
     margin-bottom: 0px !important;
+}
+
+div.ico-perfil {
+    height: 87px;
+    width: 100px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px !important;
+}
+
+div.ico-perfil i {
+    font-size: 65pt;
+    color: #9b9b9b;
+    background-color: white;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1:hover > div.ico-perfil i {
+    background-color: #f3f3f3 !important;
 }
 
 
@@ -1218,7 +1424,9 @@ div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.
     pointer-events: none !important;
 }
 
-.disabled-input input::-webkit-input-placeholder { color: #b2b2b2 !important; } 
+.disabled-input input::-webkit-input-placeholder {
+    color: #b2b2b2 !important;
+}
 
 div.registrar-negocio div.container-fluid div.row.ha div.col-md-6.i div.row div.col-md-9 div.row div.col-md-5 .picker__date-display {
     background-color: #f52d56 !important;
@@ -1712,6 +1920,7 @@ div.informacion-mi-negocio div.container-fluid div.row.ppp div.col-md-12 div.row
 div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.no-data {
     text-align: center;
     margin-bottom: 10%;
+    margin-top: 10px;
 }
 
 div.informacion-mi-negocio div.container-fluid div.row div.col-md-12 div.no-data p.npr {
@@ -1785,6 +1994,8 @@ div.modal.i-n div.modal-dialog.a-p {
 }
 
 div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-header {
+    display: flex;
+    align-items: baseline;
     padding: 2rem 2rem 1rem 2rem;
     border-bottom: none !important;
 }
@@ -1792,6 +2003,21 @@ div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-header {
 div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-header h4 {
     font-weight: 500;
     font-size: 19.5pt;
+}
+
+div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-header button {
+    background-color: #F52D56 !important;
+    color: #ffffff;
+    margin: 0px;
+    padding: 0px !important;
+    box-shadow: none !important;
+    font-family: "SFUI Display";
+    font-weight: bold;
+    text-transform: none;
+    border-radius: 6px;
+    height: 30px;
+    width: 50px;
+    font-size: 12pt;
 }
 
 div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body {
@@ -1833,7 +2059,7 @@ div.modal.i-n div.modal-dialog.a-p div.modal-content div.modal-body div button.b
     text-transform: none;
     border-radius: 6px;
     height: 40px;
-    width: 135px;
+    width: 170px;
     font-size: 12pt;
 }
 

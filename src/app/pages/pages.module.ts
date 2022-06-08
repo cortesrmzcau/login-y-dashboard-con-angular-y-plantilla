@@ -9,23 +9,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PagesComponent } from './pages.component';
 import { MisNegociosComponent } from './mis-negocios/mis-negocios.component';
-import { RegistrarNegocioComponent } from './registrar-negocio/registrar-negocio.component';
 import { NavComponent } from './nav/nav.component';
-import { InformacionMiNegocioComponent } from './informacion-mi-negocio/informacion-mi-negocio.component';
-import { EditarNegocioComponent } from './editar-negocio/editar-negocio.component';
 
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DropzoneDirective } from './dropzone.directive';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
 @NgModule({
     declarations: [
         PagesComponent,
         MisNegociosComponent,
-        RegistrarNegocioComponent,
         NavComponent,
-        InformacionMiNegocioComponent,
-        EditarNegocioComponent,
         DropzoneDirective
     ],
     exports: [
@@ -43,10 +39,10 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
         MDBBootstrapModulesPro.forRoot(),
         AgmCoreModule.forRoot({
             // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key
-            apiKey: 'AIzaSyCJ1zJa9-jBEKM6ERzDZBuS3zD9rvv9E30',
         }),
         NgxDropzoneModule,
-        SlickCarouselModule
+        SlickCarouselModule,
+        AngularEditorModule
     ],
     providers: [
     ],
